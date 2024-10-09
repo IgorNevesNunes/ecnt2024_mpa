@@ -1,0 +1,94 @@
+---
+title: "Slides"
+author: "Igor Neves Nunes"
+format: html
+toc: true
+toc_float: true
+self-contained-math: true
+---
+
+# Modelos e Notação
+
+O modelo **populacional** é descrito por: 
+
+  yi = β0 + β1xi + ui
+  
+O modelo estimado pela **amostra** é descrito por:
+
+  yi = β0^ + β1^ xi + ei
+  
+# Reta de melhor ajuste
+
+A reta de melhor ajuste é aquela que minimiza a **soma dos erros quadrados - *Sum of Squared Errors* (SEE)**
+
+  SSE = ∑ni=1 (ei)^2
+  
+**O método dos mínimos quadrados ordinários - *Ordinary least squares (OLS)* minimiza a soma dos erros quadrados**
+
+As hipóteses do MQO consideram que os estimadores são **não viesados e consistentes** e também que são **BLUE (*Best Linear Unbiased Estimators*)**
+
+
+Minimizar uma função multivariada requer: **1) a derivada de primeira ordem igual a zero** e; **2) derivada segunda negativa (concavidade pra cima)**
+
+# Propriedades dos estimadores de MQO
+
+1) **O estimador é não viesado**: a estimativa dos parâmetros tende a ser igual ao verdadeiro valor dos parâmetros
+
+2) **Variância**: as estimativas dos parâmetros buscam minimizar os erros
+
+**OBSERVAÇÃO**: existe um fenômeno chamado ***trade-off* viés/variância**. Uma estimativa que vise minimizar o viés apresentará uma maior variância e vice-versa
+
+O objetivo do ***machine learning*** é encontrar um equilíbrio entre viés e variância que torne o modelo preciso e generalizável
+
+Os estimadores de MQO são não viesados e possuem a menor variância
+
+## Hipóteses do MQO
+
+1) A relação poulacional é linear nos parâmetros e contém um erro
+
+2) A variável *X* é **exógena**. Ou seja, a esperança do erro populacional dado um X é igual a zero. Isso significa que para qualquer valor de *X*, a média do resíduo deve ser zero
+
+3) A variável *X* tem variação, e se houver múltiplas variáveis explicativas, elas não são perfeitamente correlacionadas
+
+4) Os erros populacionais ui são independentes e identicamente distribuídos como VA normais com média zero
+
+**OBSERVAÇÃO** as hipóteses 1, 2 e 3 tornam os estimadores de MQO **não viesados**. A hipótese 4 dá um estimador não viesado da variância do estimador de MQO
+
+Possíveis violações do modelo de MQO:
+
+- Relações não lineares/erro de especificação;
+- Erros sem distribuição idêntica ou não independentes;
+- Violações de exogeneidade (principalmente o viés da variável omitida)
+
+# REGRESSÃO LINEAR MÚLTIPLA
+
+## Hipóteses do modelo de regressão linear múltipla
+
+**H1. E(ϵi|Xi)=0** - Os erros têm média zero
+
+**H2. V(ϵi|Xi)=σ2<∞** - A variância é finita e constante
+
+**H3. Cov(ϵi,xi|Xi)=0** - Não existe correlação entre ϵi e xi
+
+**H4. Cov(ϵi,ϵi|Xi)=0** - Os erros não são linearmente correlacionados
+
+**H5: ϵi|Xi∼N(0,σ2)** - Os erros seguem uma distribuição aproximadamente normal, com média zero e variância constante σ2
+
+- As hipóteses **H1**, **H2**, **H3** e **H4** garantem que os estimadores de MQO são os melhores estimadores lineares não viesados, e **H5** é importante para a realização de inferências por meio dos testes de hipóteses
+
+# Propriedades dos estimadores de MQO
+
+1) São **consistentes** - Os valores convergirão para os verdadeiros valores dos parâmetros populacionais à medida que o tamanho da amostra aumenta
+
+2) São **não-viesados** - Em média, os valores estimados dos parâmetros são iguais aos valores verdadeiros dos parâmetros
+
+3) São **eficientes** - É o estimador não-viesado com a **menor variância**
+
+
+
+
+
+
+
+
+
